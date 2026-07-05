@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>(주)코씨플러스 - 솔루션</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: -apple-system, sans-serif; }
+        body { line-height: 1.6; color: #333333; background-color: #fafafa; }
+        
+        /* 코씨플러스 전용 그린 헤더 */
+        header { background: #111e16; color: #fff; padding: 20px 10%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; }
+        .logo { display: flex; align-items: center; }
+        .logo a { color: #fff; font-size: 1.6rem; font-weight: bold; text-decoration: none; }
+        .logo span { color: #2ecc71; font-size: 0.95rem; margin-left: 10px; font-weight: 500; }
+        .nav-container { display: flex; align-items: center; }
+        .nav-links { list-style: none; display: flex; align-items: center; }
+        .nav-links li { margin-left: 25px; }
+        .nav-links a { color: #a3b899; text-decoration: none; font-size: 1rem; transition: color 0.3s; }
+        .nav-links a:hover, .nav-links .active { color: #fff; }
+        .portal-btn { margin-left: 30px; padding: 6px 20px; border: 1px solid #2ecc71; color: #2ecc71; text-decoration: none; font-size: 0.9rem; font-weight: bold; border-radius: 20px; transition: all 0.3s; }
+        .portal-btn:hover { background: #2ecc71; color: #111e16; }
+        
+        .container { padding: 60px 10%; max-width: 1100px; margin: 0 auto; }
+        h2 { color: #111e16; font-size: 1.8rem; margin-bottom: 30px; position: relative; padding-bottom: 10px; }
+        h2::after { content: ''; position: absolute; bottom: 0; left: 0; width: 40px; height: 3px; background: #2ecc71; }
+        
+        /* 솔루션 카드 디자인 */
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(450px, 1fr)); gap: 30px; margin-top: 20px; }
+        .card { background: #fff; border: 1px solid #eee; padding: 35px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.02); }
+        .card h3 { color: #111e16; font-size: 1.3rem; margin-bottom: 15px; display: flex; align-items: center; }
+        .card h3::before { content: '■'; color: #2ecc71; margin-right: 10px; font-size: 0.9rem; }
+        .card p { color: #4a5568; font-size: 1.05rem; margin-bottom: 15px; word-break: keep-all; }
+        .tech-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 15px; }
+        .tag { background: #eafaf1; color: #2ecc71; padding: 4px 12px; border-radius: 15px; font-size: 0.85rem; font-weight: bold; }
+        footer {
+                background: #111e16;
+                color: #a3b899;
+                text-align: center;
+                padding: 30px 10%;
+                margin-top: 60px;
+                font-size: 0.9rem;
+                border-top: 1px solid rgba(46, 204, 113, 0.1);
+            }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo"><a href="company-coci.html">COCI+</a><span>(주)코씨플러스</span></div>
+        <div class="nav-container">
+            <ul class="nav-links">
+                <li><a href="company-coci.html">기업소개</a></li>
+                <li><a href="solution-coci.html" class="active">솔루션</a></li>
+                <li><a href="cert-coci.html">인증·성과</a></li>
+                <li><a href="contact-coci.html">Contact</a></li>
+            </ul>
+            <a href="index.html" class="portal-btn">포탈 홈</a>
+        </div>
+    </header>
+
+    <div class="container">
+        <h2>Enterprise Solutions</h2>
+        <div class="grid">
+            <!-- 솔루션 1: VOAS 무대 인프라 -->
+            <div class="card">
+                <h3>VOAS 지능형 무대 제어 시스템</h3>
+                <p>문화예술 현장의 안정적인 인프라 구축을 위한 스크립트 인식 기반 무대 제어 솔루션입니다. 가변적인 감정에 의존하지 않는 정밀한 대사 매칭 기술을 바탕으로 하드웨어와 장비를 오차 없이 제어하여 완벽한 오토메이션을 구현합니다.</p>
+                <div class="tech-tags">
+                    <span class="tag">무대 인프라 제어</span>
+                    <span class="tag">정밀 스크립트 매칭</span>
+                    <span class="tag">SI 시스템 구축</span>
+                </div>
+            </div>
+
+            <!-- 솔루션 2: 배리어프리 인프라 -->
+            <div class="card">
+                <h3>배리어프리 및 소셜 IT 인프라</h3>
+                <p>소셜벤처로서 사회적 가치를 실현하는 포용적 기술(Assistive Tech) 솔루션입니다. 정보 접근 취약계층의 경계를 허무는 소통형 배리어프리 시스템 및 디지털 전환(DX) 인프라를 안정적으로 설계하고 구축합니다.</p>
+                <div class="tech-tags">
+                    <span class="tag">소셜벤처 공인</span>
+                    <span class="tag">배리어프리 DX</span>
+                    <span class="tag">정보 취약계층 지원</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2026 COCI PLUS Co., Ltd. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

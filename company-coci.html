@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>기업소개 - (주)코씨플러스</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif; }
+        body { line-height: 1.6; color: #222; background-color: #fafafa; }
+        header { background: #111e16; color: #fff; padding: 20px 10%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid #1e3527; }
+        .logo a { color: #fff; font-size: 1.8rem; font-weight: bold; text-decoration: none; letter-spacing: 1px; }
+        .logo span { color: #52b788; font-size: 1rem; margin-left: 8px; vertical-align: middle; }
+        .nav-container { display: flex; align-items: center; }
+        .nav-links { list-style: none; display: flex; align-items: center; }
+        .nav-links li { margin-left: 30px; }
+        .nav-links a { color: #a3b899; text-decoration: none; font-size: 1rem; font-weight: 500; transition: color 0.3s; }
+        .nav-links a:hover, .nav-links .active { color: #fff; }
+        
+        /* 포탈 홈 버튼 스타일 */
+        .portal-home-btn { margin-left: 35px; padding: 6px 18px; border: 1px solid #52b788; color: #52b788; text-decoration: none; font-size: 0.95rem; font-weight: bold; border-radius: 20px; transition: all 0.3s; }
+        .portal-home-btn:hover { background: #52b788; color: #111e16; }
+        
+        .container { padding: 60px 10%; max-width: 1200px; margin: 0 auto; }
+        h2 { color: #111e16; font-size: 2.2rem; margin-bottom: 35px; position: relative; padding-bottom: 15px; }
+        h2::after { content: ''; position: absolute; bottom: 0; left: 0; width: 60px; height: 4px; background: #52b788; }
+        
+        /* 기업소개 상단 텍스트 스타일 */
+        .intro-box { background: #fff; padding: 40px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.02); border: 1px solid #eee; margin-bottom: 40px; }
+        .intro-box p { font-size: 1.15rem; color: #333; line-height: 1.8; margin-bottom: 15px; word-break: keep-all; }
+        .intro-box p:last-child { margin-bottom: 0; }
+        .intro-tagline { font-size: 1.25rem; font-weight: bold; color: #111e16; border-left: 4px solid #52b788; padding-left: 15px; margin-bottom: 20px; }
+        
+        /* 연혁 스타일 */
+        .history-container { background: #fff; padding: 45px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.02); border: 1px solid #eee; }
+        .history-title { font-size: 1.6rem; color: #111e16; margin-bottom: 25px; padding-bottom: 10px; border-bottom: 1px solid #ddd; }
+        
+        .history-year { margin-bottom: 40px; }
+        .history-year:last-child { margin-bottom: 0; }
+        .history-year h3 { font-size: 1.4rem; color: #111e16; margin-bottom: 20px; border-bottom: 2px solid #eef2ed; padding-bottom: 8px; display: inline-block; }
+        
+        .history-list { list-style: none; }
+        .history-list li { display: flex; margin-bottom: 15px; align-items: flex-start; line-height: 1.7; }
+        .history-date { font-weight: bold; color: #52b788; width: 140px; flex-shrink: 0; font-size: 1.05rem; }
+        .history-content { color: #333; font-size: 1.05rem; word-break: keep-all; }
+        .history-sub { display: block; font-size: 0.95rem; color: #666; margin-top: 4px; }
+
+        footer { background: #111e16; color: #8fa392; text-align: center; padding: 40px; font-size: 0.9rem; border-top: 1px solid #1e3527; margin-top: 120px; }
+        @media (max-width: 900px) {
+            header { padding: 20px 5%; flex-direction: column; gap: 15px; }
+            .nav-container { flex-direction: column; gap: 15px; }
+            .nav-links { flex-wrap: wrap; justify-content: center; gap: 15px; }
+            .nav-links li { margin-left: 0; }
+            .portal-home-btn { margin-left: 0; }
+            .container { padding: 40px 5%; }
+            .history-list li { flex-direction: column; margin-bottom: 20px; }
+            .history-date { width: 100%; margin-bottom: 5px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo"><a href="company-coci.html">COCI+</a><span>(주)코씨플러스</span></div>
+        <div class="nav-container">
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="company-coci.html" class="active">기업소개</a></li>
+                    <li><a href="solution-coci.html">링솔 솔루션</a></li>
+                    <li><a href="cert-coci.html">인증·성과</a></li>
+                    <li><a href="contact-coci.html">Contact</a></li>
+                    
+                </ul>
+            </nav>
+            <a href="index.html" class="portal-home-btn">포탈 홈</a>
+        </div>
+    </header>
+
+    <div class="container">
+        <section>
+            <h2>기업소개</h2>
+            
+            <!-- 상단 기업소개 문구 추가 -->
+            <div class="intro-box">
+                <p class="intro-tagline">문화 기반 기술로 지속가능한 사회를 디자인합니다.</p>
+                <p>
+                    <strong>(주)코씨플러스(COCI+)</strong>는 문화기술(CT) 기반 창작 플랫폼을 구축하며 다양한 기술을 연구하고 있습니다. 
+                </p>
+                <p>
+                    CT 기반 창작 플랫폼 개발, ESG 지향 제품 개발, 지식재산권을 위한 특허 출원 등을 핵심 축으로 삼아, <strong>AI와 XR 기술을 활용해 기업과 창작자의 성장 환경을 지원</strong>합니다.
+                </p>
+            </div>
+            
+            <!-- 하단 기업연혁 -->
+            <div class="history-container">
+                <h3 class="history-title">기업 연혁</h3>
+
+                <!-- 2026년도 연혁 -->
+                <div class="history-year">
+                    <h3>2026년도</h3>
+                    <ul class="history-list">
+                        <li>
+                            <span class="history-date">2026. 04. 07</span>
+                            <span class="history-content">지점 폐지 (동일주소 본·지점으로 지점 폐지)</span>
+                        </li>
+                        <li>
+                            <span class="history-date">2026. 03. 18</span>
+                            <span class="history-content">
+                                [INVEST경기] G-Value 선정
+                                <span class="history-sub">(5분 영어 발표 진행)</span>
+                            </span>
+                        </li>
+                        <li>
+                            <span class="history-date">2026. 03. 04</span>
+                            <span class="history-content">경기도 지역협력연구센터(GRRC) 가족기업 선정</span>
+                        </li>
+                        <li>
+                            <span class="history-date">2026. 03. 01</span>
+                            <span class="history-content">본점 이전 (서울 -> 경기도)</span>
+                        </li>
+                        <li>
+                            <span class="history-date">2026. 02. 20</span>
+                            <span class="history-content">유상증자</span>
+                        </li>
+                        <li>
+                            <span class="history-date">2026. 01. 07</span>
+                            <span class="history-content">소셜벤처기업 선정 (중소기업벤처부장관)</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- 2025년도 연혁 -->
+                <div class="history-year">
+                    <h3>2025년도</h3>
+                    <ul class="history-list">
+                        <li>
+                            <span class="history-date">2025. 12. 01</span>
+                            <span class="history-content">스마트 직업훈련 플랫폼(STEP) 계약 <span class="history-sub">(한국기술대학교 온라인평생교육원)</span></span>
+                        </li>
+                        <li>
+                            <span class="history-date">2025. 09 ~ 12</span>
+                            <span class="history-content">서울기후테크지원센터 컨설팅 선정 3회차 멘토링 - LINGSOL</span>
+                        </li>
+                        <li>
+                            <span class="history-date">2025. 09 ~ 12</span>
+                            <span class="history-content">DPG 테스트 베드 선정 - VOAS 30% 플랫폼 구현</span>
+                        </li>
+                        <li>
+                            <span class="history-date">2025. 09. 01</span>
+                            <span class="history-content">
+                                경기창업혁신공간 북부권(의정부) 틔움공간 입주 선정 - VOAS (Voice Open Art Stage)
+                                <span class="history-sub">지점 이전, 지점상호 변경 (DML)</span>
+                            </span>
+                        </li>
+                        <li>
+                            <span class="history-date">2025. 07 ~ 12</span>
+                            <span class="history-content">고사양 컴퓨팅 지원사업 선정 (AI 모델 학습, 평가 및 추론 작업) - VOAS</span>
+                        </li>
+                        <li>
+                            <span class="history-date">2025. 07. 07</span>
+                            <span class="history-content">(주)코씨플러스 남양주 지점 설치</span>
+                        </li>
+                        <li>
+                            <span class="history-date">2025. 04. 23</span>
+                            <span class="history-content">(주)코씨플러스 창업</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 COCI PLUS Co., Ltd. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>

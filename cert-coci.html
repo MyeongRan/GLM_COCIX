@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>(주)코씨플러스 - 인증·성과</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: -apple-system, sans-serif; }
+        body { line-height: 1.6; color: #333333; background-color: #fafafa; }
+        
+        header { background: #111e16; color: #fff; padding: 20px 10%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; }
+        .logo { display: flex; align-items: center; }
+        .logo a { color: #fff; font-size: 1.6rem; font-weight: bold; text-decoration: none; }
+        .logo span { color: #2ecc71; font-size: 0.95rem; margin-left: 10px; font-weight: 500; }
+        .nav-container { display: flex; align-items: center; }
+        .nav-links { list-style: none; display: flex; align-items: center; }
+        .nav-links li { margin-left: 25px; }
+        .nav-links a { color: #a3b899; text-decoration: none; font-size: 1rem; transition: color 0.3s; }
+        .nav-links a:hover, .nav-links .active { color: #fff; }
+        .portal-btn { margin-left: 30px; padding: 6px 20px; border: 1px solid #2ecc71; color: #2ecc71; text-decoration: none; font-size: 0.9rem; font-weight: bold; border-radius: 20px; transition: all 0.3s; }
+        .portal-btn:hover { background: #2ecc71; color: #111e16; }
+        
+        .container { padding: 60px 10%; max-width: 1100px; margin: 0 auto; }
+        h2 { color: #111e16; font-size: 1.8rem; margin-bottom: 30px; position: relative; padding-bottom: 10px; }
+        h2::after { content: ''; position: absolute; bottom: 0; left: 0; width: 40px; height: 3px; background: #2ecc71; }
+        
+        .section-title { font-size: 1.3rem; color: #111e16; margin: 30px 0 15px 0; font-weight: bold; }
+        .cert-badge-box { background: #fff; border: 1px solid #eee; padding: 30px; border-radius: 8px; display: flex; align-items: center; gap: 25px; margin-bottom: 30px; }
+        /*.badge { background: #111e16; color: #2ecc71; font-weight: bold; padding: 15px 25px; border-radius: 6px; font-size: 1.1rem; letter-spacing: 1px; border: 1px solid #2ecc71; }
+        /* 💡 가로 폭을 150px로 넓히고 줄바꿈을 절대 금지(white-space: nowrap) 처리했습니다 */
+        .badge { 
+            background: #111e16; 
+            color: #2ecc71; 
+            font-weight: bold; 
+            padding: 12px 0; 
+            border-radius: 6px; 
+            font-size: 1.05rem; 
+            letter-spacing: 1px; 
+            border: 1px solid #2ecc71; 
+            min-width: 150px; 
+            text-align: center; 
+            white-space: nowrap; 
+        }
+        .cert-desc h4 { font-size: 1.15rem; color: #111e16; margin-bottom: 5px; }
+        .cert-desc p { color: #718096; font-size: 0.95rem; }
+        
+        .stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; }
+        .stat-card { background: #fff; border: 1px solid #eee; padding: 30px; border-radius: 8px; text-align: center; }
+        .stat-card .num { font-size: 2.5rem; font-weight: bold; color: #2ecc71; margin-bottom: 5px; }
+        .stat-card .label { font-size: 1rem; color: #4a5568; font-weight: 500; }
+        footer {
+                background: #111e16;
+                color: #a3b899;
+                text-align: center;
+                padding: 30px 10%;
+                margin-top: 60px;
+                font-size: 0.9rem;
+                border-top: 1px solid rgba(46, 204, 113, 0.1);
+            }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo"><a href="company-coci.html">COCI+</a><span>(주)코씨플러스</span></div>
+        <div class="nav-container">
+            <ul class="nav-links">
+                <li><a href="company-coci.html">기업소개</a></li>
+                <li><a href="solution-coci.html">링솔 솔루션</a></li>
+                <li><a href="cert-coci.html" class="active">인증·성과</a></li>
+                <li><a href="contact-coci.html">Contact</a></li>
+                
+            </ul>
+            <a href="index.html" class="portal-btn">포탈 홈</a>
+        </div>
+    </header>
+
+    <div class="container">
+        <h2>인증 및 성과</h2>
+        <div class="section-title">공인 법인 인증</div>
+        <div class="cert-container">
+            <!-- 1. 소셜벤처 인증 -->
+            <div class="cert-badge-box">
+                <div class="badge">소셜벤처</div>
+                <div class="cert-desc">
+                    <h4>기술보증기금 소셜벤처 판별 획득</h4>
+                    <p>사회의 긍정적인 변화와 지속 가능한 사회적 가치 창출력을 공인받은 혁신 비즈니스 자격입니다.</p>
+                </div>
+            </div>
+
+            <!-- 2. 여성기업 인증 -->
+            <div class="cert-badge-box">
+                <div class="badge">여성기업</div>
+                <div class="cert-desc">
+                    <h4>중소벤처기업부 여성기업 인증</h4>
+                    <p>여성 기업가 정신을 바탕으로 투명한 경영과 지속 가능한 성장을 지향하는 공인 여성기업입니다.</p>
+                </div>
+            </div>
+
+            <!-- 3. 중소기업 확인 -->
+            <div class="cert-badge-box">
+                <div class="badge">중소기업</div>
+                <div class="cert-desc">
+                    <h4>중소기업기본법에 따른 중소기업 확인</h4>
+                    <p>대한민국 중소벤처기업부 기준을 충족하며 적법하고 건강한 성장을 다져가는 정식 법인 기업입니다.</p>
+                </div>
+            </div>
+
+            <!-- 4. 창업기업 확인 -->
+            <div class="cert-badge-box">
+                <div class="badge">창업기업</div>
+                <div class="cert-desc">
+                    <h4>창업기업 육성법에 따른 창업기업 확인</h4>
+                    <p>차세대 기술과 혁신적인 아이디어를 바탕으로 시장을 개척해 나가는 활력 있는 기술 창업 스타트업입니다.</p>
+                </div>
+            </div>
+        </div>
+        
+
+        <div class="section-title">기업 인프라 및 지식재산권</div>
+        <div class="stat-grid">
+            <div class="stat-card">
+                <div class="num">1 건</div>
+                <div class="label">등록 특허 자산</div>
+            </div>
+            <div class="stat-card">
+                <div class="num">12 건</div>
+                <div class="label">출원 진행 특허</div>
+            </div>
+            <div class="stat-card">
+                <div class="num">HQ</div>
+                <div class="label">창업혁신공간 북부권 입주</div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2026 COCI PLUS Co., Ltd. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

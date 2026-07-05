@@ -1,0 +1,29 @@
+<!-- 💡 COCI+ 전용: 입력창 디자인을 살리고 이메일로 직배송하는 코드 -->
+<div style="background: #fff; padding: 30px; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); max-width: 460px; margin: 0 auto;">
+    
+    <form action="https://formspree.io/f/ceo@cociplus.art" method="POST">
+        
+        <!-- 1. 기업명 / 담당자명 -->
+        <div style="margin-bottom: 20px; text-align: left;">
+            <label style="display: block; font-weight: bold; margin-bottom: 8px; color: #1a1a1a;">기업명 / 담당자명</label>
+            <input type="text" name="company_and_name" required style="width: 100%; padding: 12px; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 1rem; box-sizing: border-box;">
+        </div>
+
+        <!-- 2. 회신 이메일 / 연락처 -->
+        <div style="margin-bottom: 20px; text-align: left;">
+            <label style="display: block; font-weight: bold; margin-bottom: 8px; color: #1a1a1a;">회신 이메일 / 연락처</label>
+            <input type="text" name="contact_info" required style="width: 100%; padding: 12px; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 1rem; box-sizing: border-box;">
+        </div>
+
+        <!-- 3. 문의 내용 -->
+        <div style="margin-bottom: 24px; text-align: left;">
+            <label style="display: block; font-weight: bold; margin-bottom: 8px; color: #1a1a1a;">문의 내용</label>
+            <textarea name="message" required placeholder="도입하고자 하는 프로젝트나 인프라 협업 내용을 작성해 주세요." style="width: 100%; padding: 12px; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 1rem; min-height: 120px; font-family: inherit; box-sizing: border-box; resize: vertical;"></textarea>
+        </div>
+
+        <!-- 전송 단추 -->
+        <button type="submit" style="width: 100%; background: #112211; color: #fff; border: none; padding: 16px; font-size: 1.1rem; font-weight: bold; border-radius: 6px; cursor: pointer; transition: background 0.2s;">
+            비즈니스 문의하기
+        </button>
+    </form>
+</div>

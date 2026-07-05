@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GLM 연구소 - 인증·성과</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: -apple-system, sans-serif; }
+        body { line-height: 1.6; color: #333333; background-color: #f4f7f9; }
+        
+        header { background: #0f1c2e; color: #fff; padding: 20px 10%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; }
+        .logo { display: flex; align-items: center; }
+        .logo a { color: #fff; font-size: 1.6rem; font-weight: bold; text-decoration: none; letter-spacing: 1px; }
+        .logo span { color: #3498db; font-size: 0.95rem; margin-left: 10px; font-weight: 500; }
+        .nav-container { display: flex; align-items: center; }
+        .nav-links { list-style: none; display: flex; align-items: center; }
+        .nav-links li { margin-left: 25px; }
+        .nav-links a { color: #94a3b8; text-decoration: none; font-size: 1rem; font-weight: 500; transition: color 0.3s; }
+        .nav-links a:hover, .nav-links .active { color: #fff; }
+        .portal-btn { margin-left: 30px; padding: 6px 20px; border: 1px solid #3498db; color: #3498db; text-decoration: none; font-size: 0.9rem; font-weight: bold; border-radius: 20px; transition: all 0.3s; }
+        .portal-btn:hover { background: #3498db; color: #0f1c2e; }
+        
+        .container { padding: 60px 10%; max-width: 1100px; margin: 0 auto; }
+        h2 { color: #1a365d; font-size: 1.8rem; margin-bottom: 30px; position: relative; padding-bottom: 10px; }
+        h2::after { content: ''; position: absolute; bottom: 0; left: 0; width: 40px; height: 3px; background: #3498db; }
+        
+        .section-title { font-size: 1.3rem; color: #1a365d; margin: 30px 0 15px 0; font-weight: bold; }
+        .cert-badge-box { background: #fff; border: 1px solid #e1e8ed; padding: 30px; border-radius: 8px; display: flex; align-items: center; gap: 25px; margin-bottom: 30px; }
+        .badge { background: #0f1c2e; color: #3498db; font-weight: bold; padding: 15px 25px; border-radius: 6px; font-size: 1.1rem; letter-spacing: 1px; border: 1px solid #3498db; }
+        .cert-desc h4 { font-size: 1.15rem; color: #1a365d; margin-bottom: 5px; }
+        .cert-desc p { color: #64748b; font-size: 0.95rem; }
+        
+        .stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; }
+        .stat-card { background: #fff; border: 1px solid #e1e8ed; padding: 30px; border-radius: 8px; text-align: center; }
+        .stat-card .num { font-size: 2.5rem; font-weight: bold; color: #3498db; margin-bottom: 5px; }
+        .stat-card .label { font-size: 1rem; color: #475569; font-weight: 500; }
+    /* GLM 하단 푸터 블루 스타일 */
+        footer {
+            background: #0f172a; /* GLM 테마와 어우러지는 깊은 네이비/블루블랙 톤 */
+            color: #94a3b8;      /* 세련되고 깔끔한 블루그레이 글자색 */
+            text-align: center;
+            padding: 30px 10%;
+            margin-top: 60px;    /* 본문 콘텐츠와의 여유 공간 */
+            font-size: 0.9rem;
+            border-top: 1px solid rgba(59, 130, 246, 0.1); /* 미세한 블루 경계선 */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo"><a href="company-glm.html">GLM</a><span>GLM 연구소</span></div>
+        <div class="nav-container">
+            <ul class="nav-links">
+                <li><a href="company-glm.html">연구소소개</a></li>
+                <li><a href="solution-glm.html">연구솔루션</a></li>
+                <li><a href="cert-glm.html" class="active">인증·성과</a></li>
+                <li><a href="contact-glm.html">Contact</a></li>
+            </ul>
+            <a href="index.html" class="portal-btn">포탈 홈</a>
+        </div>
+    </header>
+
+    <div class="container">
+        <h2>Research & IP Metrics</h2>
+        <!-- 💡 Research & IP Metrics 제목 바로 아래에 이 블록을 통째로 새로 넣어주세요 -->
+        <div class="section-title" style="font-size: 1.3rem; color: #1a365d; margin: 30px 0 15px 0; font-weight: bold;">공인 법인 인증</div>
+        <div class="glm-cert-container" style="display: flex; flex-direction: column; gap: 15px; margin-bottom: 40px;">
+            
+            <!-- 1. 여성기업 인증 -->
+            <div class="cert-badge-box" style="background: #fff; border: 1px solid #e2e8f0; padding: 20px 30px; border-radius: 8px; display: flex; align-items: center; gap: 25px;">
+                <div class="badge" style="background: #0f172a; color: #3b82f6; font-weight: bold; padding: 12px 0; border-radius: 6px; font-size: 1.05rem; letter-spacing: 1px; border: 1px solid #3b82f6; min-width: 150px !important; text-align: center; white-space: nowrap !important;">여성기업</div>
+                <div class="cert-desc">
+                    <h4>중소벤처기업부 여성기업 인증</h4>
+                    <p>여성 기업가 정신을 바탕으로 투명한 경영과 지속 가능한 성장을 지향하는 공인 여성기업입니다.</p>
+                </div>
+            </div>
+
+            <!-- 2. 중소기업 확인 -->
+            <div class="cert-badge-box" style="background: #fff; border: 1px solid #e2e8f0; padding: 20px 30px; border-radius: 8px; display: flex; align-items: center; gap: 25px;">
+                <div class="badge" style="background: #0f172a; color: #3b82f6; font-weight: bold; padding: 12px 0; border-radius: 6px; font-size: 1.05rem; letter-spacing: 1px; border: 1px solid #3b82f6; min-width: 150px !important; text-align: center; white-space: nowrap !important;">중소기업</div>
+                <div class="cert-desc">
+                    <h4>중소기업기본법에 따른 중소기업 확인</h4>
+                    <p>대한민국 중소벤처기업부 기준을 충족하며 적법하고 건강한 성장을 다져가는 정식 법인 기업입니다.</p>
+                </div>
+            </div>
+
+            <!-- 3. 창업기업 확인 -->
+            <div class="cert-badge-box" style="background: #fff; border: 1px solid #e2e8f0; padding: 20px 30px; border-radius: 8px; display: flex; align-items: center; gap: 25px;">
+                <div class="badge" style="background: #0f172a; color: #3b82f6; font-weight: bold; padding: 12px 0; border-radius: 6px; font-size: 1.05rem; letter-spacing: 1px; border: 1px solid #3b82f6; min-width: 150px !important; text-align: center; white-space: nowrap !important;">창업기업</div>
+                <div class="cert-desc">
+                    <h4>창업기업 육성법에 따른 창업기업 확인</h4>
+                    <p>차세대 기술과 혁신적인 아이디어를 바탕으로 시장을 개척해 나가는 활력 있는 기술 창업 스타트업입니다.</p>
+                </div>
+            </div>
+
+        </div>
+        <!-- 💡 여기까지 추가 완료하고, 이 아래부터는 기존 원본 코드가 그대로 이어지면 됩니다 -->
+        <div class="section-title">연구 핵심 경쟁력</div>
+        <div class="cert-badge-box">
+            <div class="badge">지식재산권 CORE IP</div>
+            <div class="cert-desc">
+                <h4>독자적 원천 알고리즘 설계 기술</h4>
+                <p>데이터 가공 및 미디어 제어 프로세스의 안정성을 확보하는 핵심 연구 인프라를 보유하고 있습니다.</p>
+            </div>
+        </div>
+        
+
+        <div class="section-title">R&D 정량 성과 지표</div>
+        <div class="stat-grid">
+            <div class="stat-card">
+                <div class="num">13 건</div>
+                <div class="label">총 지식재산권 포트폴리오</div>
+            </div>
+            <div class="stat-card">
+                <div class="num">R&D</div>
+                <div class="label">차세대 매칭 엔진 고도화</div>
+            </div>
+            <div class="stat-card">
+                <div class="num">Tech</div>
+                <div class="label">지능형 융합 기술 연구</div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p>© 2026 GLM Lab. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

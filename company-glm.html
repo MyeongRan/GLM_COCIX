@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GLM 연구소 - 소개</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, sans-serif; }
+        body { background-color: #f4f7f9; color: #333333; line-height: 1.6; }
+        
+        /* image_0ed286.png 스타일 반영한 GLM 블루 헤더 */
+        header { background: #0f1c2e; color: #fff; padding: 20px 10%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; }
+        .logo { display: flex; align-items: center; }
+        .logo a { color: #fff; font-size: 1.6rem; font-weight: bold; text-decoration: none; letter-spacing: 1px; }
+        .logo span { color: #3498db; font-size: 0.95rem; margin-left: 10px; font-weight: 500; }
+        .nav-container { display: flex; align-items: center; }
+        .nav-links { list-style: none; display: flex; align-items: center; }
+        .nav-links li { margin-left: 25px; }
+        .nav-links a { color: #94a3b8; text-decoration: none; font-size: 1rem; font-weight: 500; transition: color 0.3s; }
+        .nav-links a:hover, .nav-links .active { color: #fff; }
+        .portal-btn { margin-left: 30px; padding: 6px 20px; border: 1px solid #3498db; color: #3498db; text-decoration: none; font-size: 0.9rem; font-weight: bold; border-radius: 20px; transition: all 0.3s; }
+        .portal-btn:hover { background: #3498db; color: #0f1c2e; }
+        
+        .container { padding: 60px 10%; max-width: 1100px; margin: 0 auto; }
+        h2 { color: #1a365d; font-size: 1.8rem; margin-bottom: 30px; position: relative; padding-bottom: 10px; }
+        h2::after { content: ''; position: absolute; bottom: 0; left: 0; width: 40px; height: 3px; background: #3498db; }
+        .card { background: white; padding: 35px; border-radius: 8px; border: 1px solid #e1e8ed; margin-bottom: 30px; box-shadow: 0 2px 8px rgba(0,0,0,0.01); }
+        .card p { font-size: 1.05rem; color: #444; word-break: keep-all; margin-bottom: 10px; }
+        .tech-focus { background: #edf2f7; border-left: 4px solid #3498db; padding: 15px; margin-top: 15px; font-weight: bold; color: #1a365d; }
+    /* GLM 하단 푸터 블루 스타일 */
+        footer {
+            background: #0f172a; /* GLM 테마와 어우러지는 깊은 네이비/블루블랙 톤 */
+            color: #94a3b8;      /* 세련되고 깔끔한 블루그레이 글자색 */
+            text-align: center;
+            padding: 30px 10%;
+            margin-top: 60px;    /* 본문 콘텐츠와의 여유 공간 */
+            font-size: 0.9rem;
+            border-top: 1px solid rgba(59, 130, 246, 0.1); /* 미세한 블루 경계선 */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo"><a href="company-glm.html">GLM</a><span>GLM 연구소</span></div>
+        <div class="nav-container">
+            <ul class="nav-links">
+                <li><a href="company-glm.html" class="active">연구소소개</a></li>
+                <li><a href="cert-glm.html">인증·성과</a></li>
+                <li><a href="contact-glm.html">Contact</a></li>
+            </ul>
+            <a href="index.html" class="portal-btn">포탈 홈</a>
+        </div>
+    </header>
+
+    <div class="container">
+        <h2>연구소 소개</h2>
+        <div class="card">
+            <p><strong>GLM 연구소</strong>는 미래지향적 지식 연구와 문화기술(CT)의 융합을 주도하는 기술연구 기업입니다.</p>
+            <p>독자적인 지식재산권(IP) 확보를 기반으로 하여 원천기술 중심의 설계 및 연구를 수행하고 있습니다.</p>
+        </div>
+
+        <h2>현재 진행 중인 연구 프로젝트</h2>
+        <div class="card">
+            <p>GLM 연구소는 원천 기술 특허를 바탕으로 핵심 고도화 과제를 수행하고 있습니다.</p>
+            <div class="tech-focus">
+                📌 핵심 R&D: 특허 등록 기반 [앤솔로지 출판 시스템] 프로세스 개발 및 엔진 최적화 연구 진행 중
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p>© 2026 GLM Lab. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

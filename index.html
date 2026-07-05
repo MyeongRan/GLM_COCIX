@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to GLM & COCI+</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: -apple-system, sans-serif; }
+        body, html { width: 100%; height: 100%; overflow: hidden; background-color: #0b0f17; }
+        
+        /* 반반 분할 레이아웃 */
+        .wrapper { display: flex; width: 100%; height: 100%; }
+        .split-zone { flex: 1; display: flex; flex-direction: column; justify-content: center; align-items: center; text-decoration: none; transition: all 0.5s ease; position: relative; padding: 40px; }
+        
+        /* 중앙 구분선 디자인 */
+        .split-zone::after { content: ''; position: absolute; top: 15%; bottom: 15%; width: 1px; background: rgba(255,255,255,0.08); }
+        .glm-zone::after { right: 0; }
+        .coci-zone::after { left: 0; }
+
+        /* 배경 및 테마 정의 (image_0ed286.png의 어두운 감각 반영) */
+        .glm-zone { background: linear-gradient(135deg, #09121f 0%, #0f1c2e 100%); }
+        .coci-zone { background: linear-gradient(135deg, #09120e 0%, #111e16 100%); }
+        
+        /* 호버 효과: 선택한 쪽이 살짝 넓어지며 밝아짐 */
+        .split-zone:hover { flex: 1.15; }
+        .glm-zone:hover { box-shadow: inset 0 0 100px rgba(52, 152, 219, 0.15); }
+        .coci-zone:hover { box-shadow: inset 0 0 100px rgba(46, 204, 113, 0.15); }
+
+        /* 텍스트 스타일링 */
+        .brand-logo { font-size: 3.5rem; font-weight: bold; color: #ffffff; letter-spacing: 2px; margin-bottom: 10px; transition: transform 0.3s; }
+        .brand-sub { font-size: 1.2rem; font-weight: 500; margin-bottom: 40px; letter-spacing: 1px; }
+        
+        .glm-zone .brand-sub { color: #3498db; }
+        .coci-zone .brand-sub { color: #2ecc71; }
+        
+        /* 진입 버튼 스타일 */
+        .enter-btn { padding: 12px 35px; font-size: 1rem; font-weight: bold; background: transparent; border-radius: 25px; transition: all 0.3s; text-transform: uppercase; letter-spacing: 1px; }
+        
+        .glm-zone .enter-btn { border: 1px solid #3498db; color: #3498db; }
+        .glm-zone:hover .enter-btn { background: #3498db; color: #0f1c2e; box-shadow: 0 0 20px rgba(52, 152, 219, 0.4); }
+        
+        .coci-zone .enter-btn { border: 1px solid #2ecc71; color: #2ecc71; }
+        .coci-zone:hover .enter-btn { background: #2ecc71; color: #111e16; box-shadow: 0 0 20px rgba(46, 204, 113, 0.4); }
+
+        /* 타이틀 호버 모션 */
+        .split-zone:hover .brand-logo { transform: translateY(-5px); }
+        
+        /* 하단 카피라이트 고정 */
+        .footer-text { position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); color: rgba(255,255,255,0.2); font-size: 0.85rem; pointer-events: none; }
+    </style>
+</head>
+<body>
+
+    <div class="wrapper">
+        <!-- 왼쪽: GLM 연구소 진입 영역 (새 파일명 매칭 완료) -->
+        <a href="./company-glm.html" class="split-zone glm-zone">
+            <div class="brand-logo">GLM</div>
+            <div class="brand-sub">지식기술융합 연구소</div>
+            <div class="enter-btn">Research Hub Enter</div>
+        </a>
+
+        <!-- 오른쪽: (주)코씨플러스 진입 영역 (새 파일명 매칭 완료) -->
+        <a href="./company-coci.html" class="split-zone coci-zone">
+            <div class="brand-logo">COCI+</div>
+            <div class="brand-sub">(주)코씨플러스</div>
+            <div class="enter-btn">Enterprise Hub Enter</div>
+        </a>
+    </div>
+
+    <div class="footer-text">© 2026 CociPlus & GLM. All Rights Reserved.</div>
+
+</body>
+</html>

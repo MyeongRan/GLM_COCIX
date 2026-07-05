@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>(주)코씨플러스 - Contact</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: -apple-system, sans-serif; }
+        body { line-height: 1.6; color: #333333; background-color: #fafafa; }
+        
+        /* 코씨플러스 전용 그린 헤더 */
+        header { background: #111e16; color: #fff; padding: 20px 10%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; }
+        .logo { display: flex; align-items: center; }
+        .logo a { color: #fff; font-size: 1.6rem; font-weight: bold; text-decoration: none; }
+        .logo span { color: #2ecc71; font-size: 0.95rem; margin-left: 10px; font-weight: 500; }
+        .nav-container { display: flex; align-items: center; }
+        .nav-links { list-style: none; display: flex; align-items: center; }
+        .nav-links li { margin-left: 25px; }
+        .nav-links a { color: #a3b899; text-decoration: none; font-size: 1rem; transition: color 0.3s; }
+        .nav-links a:hover, .nav-links .active { color: #fff; }
+        .portal-btn { margin-left: 30px; padding: 6px 20px; border: 1px solid #2ecc71; color: #2ecc71; text-decoration: none; font-size: 0.9rem; font-weight: bold; border-radius: 20px; transition: all 0.3s; }
+        .portal-btn:hover { background: #2ecc71; color: #111e16; }
+        
+        .container { padding: 60px 10%; max-width: 1100px; margin: 0 auto; }
+        h2 { color: #111e16; font-size: 1.8rem; margin-bottom: 30px; position: relative; padding-bottom: 10px; }
+        h2::after { content: ''; position: absolute; bottom: 0; left: 0; width: 40px; height: 3px; background: #2ecc71; }
+        
+        .contact-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; margin-top: 20px; }
+        .info-section h3 { color: #111e16; font-size: 1.3rem; margin-bottom: 20px; }
+        .info-list { list-style: none; }
+        .info-list li { margin-bottom: 15px; font-size: 1.05rem; color: #4a5568; }
+        .info-list strong { color: #111e16; display: inline-block; width: 90px; }
+        
+        .form-section { background: #fff; border: 1px solid #eee; padding: 35px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.02); }
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; font-size: 0.95rem; font-weight: bold; color: #111e16; margin-bottom: 8px; }
+        .form-group input, .form-group textarea { width: 100%; padding: 10px; border: 1px solid #cbd5e1; border-radius: 4px; font-size: 1rem; }
+        .form-group textarea { height: 120px; resize: none; }
+        .submit-btn { width: 100%; background: #111e16; color: #fff; border: none; padding: 12px; font-size: 1rem; font-weight: bold; border-radius: 4px; cursor: pointer; transition: background 0.3s; }
+        .submit-btn:hover { background: #2ecc71; color: #111e16; }
+        footer {
+                background: #111e16;
+                color: #a3b899;
+                text-align: center;
+                padding: 30px 10%;
+                margin-top: 60px;
+                font-size: 0.9rem;
+                border-top: 1px solid rgba(46, 204, 113, 0.1);
+            }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo"><a href="company-coci.html">COCI+</a><span>(주)코씨플러스</span></div>
+        <div class="nav-container">
+            <ul class="nav-links">
+                <li><a href="company-coci.html">기업소개</a></li>
+                <li><a href="solution-coci.html">솔루션</a></li>
+                <li><a href="cert-coci.html">인증·성과</a></li>
+                <li><a href="contact-coci.html" class="active">Contact</a></li>
+            </ul>
+            <a href="index.html" class="portal-btn">포탈 홈</a>
+        </div>
+    </header>
+
+    <div class="container">
+        <h2>Business Contact</h2>
+        <div class="contact-layout">
+            <div class="info-section">
+                <h3>(주)코씨플러스 본사</h3>
+                <ul class="info-list">
+                    <li><strong>주소</strong> 경기도 의정부시 망월로 18-26, 경기창업혁신공간(북부권) 이루다</li>
+                    <li><strong>이메일</strong> cociplus@naver.com</li>
+                    <li><strong>유형</strong> 비즈니스 인프라 도입 / 제휴 문의 / 소셜 파트너십</li>
+                </ul>
+            </div>
+            <div class="form-section">
+                <!-- 💡 COCI+ 문의도 안전한 네이버 폼으로 연결합니다 -->
+            <div style="text-align: center; width: 100%; max-width: 420px; margin: 0 auto; padding: 10px;">
+                <p style="color: #475569; font-size: 0.95rem; margin-bottom: 24px; line-height: 1.6; word-break: keep-all;">
+                    문의하신 내용은 <strong style="color: #0f1c2e; font-weight: bold;">네이버 보안 시스템</strong>을 통해 안전하게 접수됩니다.<br><br>
+                    아래 버튼을 누르시면 제안서 작성 화면으로 연결됩니다.
+                </p>
+                <!-- 💡 CSS 스타일을 추가하여 마우스 반응을 설정합니다 -->
+                <style>
+                    .naver-btn {
+                        display: block; 
+                        background: #112211; /* 평소 색상 */
+                        color: #fff; 
+                        text-decoration: none; 
+                        padding: 16px; 
+                        font-size: 1rem; 
+                        font-weight: bold; 
+                        border-radius: 6px; 
+                        text-align: center; 
+                        transition: background 0.3s ease; /* 부드럽게 바뀌는 효과 */
+                    }
+                    .naver-btn:hover {
+                        background: #03c75a; /* 마우스 올렸을 때 네이버 그린 */
+                    }
+                </style>
+                <!-- ❗ " " 안에 COCI+용으로 만드신 네이버 폼 주소를 넣어주세요 -->
+                <a href="https://naver.me/xNpQVQEt" target="_blank" class="naver-btn">
+                    네이버 안전 시스템으로 문의하기
+                </a>
+                 <!-- 2. 카카오톡 상담 버튼 -->
+        <a href="http://pf.kakao.com/_xdTQxan/chat" target="_blank" style="display: block; background: #fee500; color: #3c1e1e; text-decoration: none; padding: 14px; font-size: 0.95rem; font-weight: bold; border-radius: 6px; margin-top: 15px; text-align: center; border: 1px solid #e2e8f0;">
+            💬 카카오톡으로 실시간 문의하기
+        </a>
+            </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2026 COCI PLUS Co., Ltd. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>
