@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - COCI PLUS Co., Ltd.</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif; }
+        body { line-height: 1.6; color: #222; background-color: #fafafa; }
+        header { background: #111e16; color: #fff; padding: 20px 10%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid #1e3527; }
+        .logo a { color: #fff; font-size: 1.8rem; font-weight: bold; text-decoration: none; letter-spacing: 1px; }
+        .logo span { color: #52b788; font-size: 1rem; margin-left: 8px; vertical-align: middle; }
+        .nav-container { display: flex; align-items: center; }
+        .nav-links { list-style: none; display: flex; align-items: center; }
+        .nav-links li { margin-left: 30px; }
+        .nav-links a { color: #a3b899; text-decoration: none; font-size: 1rem; font-weight: 500; transition: color 0.3s; }
+        .nav-links a:hover, .nav-links .active { color: #fff; }
+        
+        
+        .portal-home-btn { margin-left: 35px; padding: 6px 18px; border: 1px solid #52b788; color: #52b788; text-decoration: none; font-size: 0.95rem; font-weight: bold; border-radius: 20px; transition: all 0.3s; }
+        .portal-home-btn:hover { background: #52b788; color: #111e16; }
+        
+        .container { padding: 60px 10%; max-width: 1200px; margin: 0 auto; }
+        h2 { color: #111e16; font-size: 2.2rem; margin-bottom: 35px; position: relative; padding-bottom: 15px; }
+        h2::after { content: ''; position: absolute; bottom: 0; left: 0; width: 60px; height: 4px; background: #52b788; }
+        
+        
+        .intro-box { background: #fff; padding: 40px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.02); border: 1px solid #eee; margin-bottom: 40px; }
+        .intro-box p { font-size: 1.15rem; color: #333; line-height: 1.8; margin-bottom: 15px; word-break: keep-all; }
+        .intro-box p:last-child { margin-bottom: 0; }
+        .intro-tagline { font-size: 1.25rem; font-weight: bold; color: #111e16; border-left: 4px solid #52b788; padding-left: 15px; margin-bottom: 20px; }
+        
+        
+        .history-container { background: #fff; padding: 45px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.02); border: 1px solid #eee; }
+        .history-title { font-size: 1.6rem; color: #111e16; margin-bottom: 25px; padding-bottom: 10px; border-bottom: 1px solid #ddd; }
+        
+        .history-year { margin-bottom: 40px; }
+        .history-year:last-child { margin-bottom: 0; }
+        .history-year h3 { font-size: 1.4rem; color: #111e16; margin-bottom: 20px; border-bottom: 2px solid #eef2ed; padding-bottom: 8px; display: inline-block; }
+        
+        .history-list { list-style: none; }
+        .history-list li { display: flex; margin-bottom: 15px; align-items: flex-start; line-height: 1.7; }
+        .history-date { font-weight: bold; color: #52b788; width: 140px; flex-shrink: 0; font-size: 1.05rem; }
+        .history-content { color: #333; font-size: 1.05rem; word-break: keep-all; }
+        .history-sub { display: block; font-size: 0.95rem; color: #666; margin-top: 4px; }
+
+        footer { background: #111e16; color: #8fa392; text-align: center; padding: 40px; font-size: 0.9rem; border-top: 1px solid #1e3527; margin-top: 120px; }
+        @media (max-width: 900px) {
+            header { padding: 20px 5%; flex-direction: column; gap: 15px; }
+            .nav-container { flex-direction: column; gap: 15px; }
+            .nav-links { flex-wrap: wrap; justify-content: center; gap: 15px; }
+            .nav-links li { margin-left: 0; }
+            .portal-home-btn { margin-left: 0; }
+            .container { padding: 40px 5%; }
+            .history-list li { flex-direction: column; margin-bottom: 20px; }
+            .history-date { width: 100%; margin-bottom: 5px; }
+        }
+    
+        .lang-btn { margin-left: 12px; padding: 6px 14px; border: 1px solid #2ecc71; color: #111e16; background: #2ecc71; text-decoration: none; font-size: 0.85rem; font-weight: bold; border-radius: 20px; transition: all 0.3s; letter-spacing: 1px; }
+        .lang-btn:hover { background: transparent; color: #2ecc71; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo"><a href="company-coci-en.html">COCI+</a><span>COCI PLUS Co., Ltd.</span></div>
+        <div class="nav-container">
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="company-coci-en.html" class="active">About Us</a></li>
+                    <li><a href="solution-coci-en.html">Solutions</a></li>
+                    <li><a href="cert-coci-en.html">Certifications & Achievements</a></li>
+                    <li><a href="contact-coci-en.html">Contact</a></li>
+                    
+                </ul>
+            </nav>
+            <a href="index-en.html" class="portal-home-btn">Portal Home</a>
+            <a href="company-coci.html" hreflang="ko" title="한국어로 보기" class="lang-btn">KR</a>
+        </div>
+    </header>
+
+    <div class="container">
+        <section>
+            <h2>About Us</h2>
+            
+            
+            <div class="intro-box">
+                <p class="intro-tagline">Designing a sustainable society with culture-based technology.</p>
+                <p>
+                    <strong>COCI PLUS Co., Ltd. (COCI+)</strong> builds a Culture Technology (CT)-based creative platform and researches a wide range of technologies. 
+                </p>
+                <p>
+                    Centered on developing CT-based creative platforms, ESG-oriented products, and patent filings for intellectual property, we <strong>support the growth environment of companies and creators with AI and XR technologies</strong>.
+                </p>
+            </div>
+            
+            
+            <div class="history-container">
+                <h3 class="history-title">Company History</h3>
+
+                
+                <div class="history-year">
+                    <h3>2026</h3>
+                    <ul class="history-list">
+                         <li>
+                            <span class="history-date">2026. 08. 01</span>
+                            <span class="history-content"> Amendment of public notice and addition of business purposes (website address change; R&D business added)</span>
+                        </li>
+                         <li>
+                            <span class="history-date">2026. 07. 15</span>
+                            <span class="history-content">[Center for the Fourth Industrial Revolution] Selected as C4IR Korea Membership Company</span>
+                        </li>
+                        <li>
+                            <span class="history-date">2026. 04. 07</span>
+                            <span class="history-content">Branch closure (branch at the same address as headquarters closed)</span>
+                        </li>
+                        <li>
+                            <span class="history-date">2026. 03. 18</span>
+                            <span class="history-content">
+                                [INVEST GYEONGGI] Selected for G-Value
+                                <span class="history-sub">(5-minute presentation delivered in English)</span>
+                            </span>
+                        </li>
+                        <li>
+                            <span class="history-date">2026. 03. 04</span>
+                            <span class="history-content">Selected as Family Company of Gyeonggi Regional Research Center (GRRC)</span>
+                        </li>
+                        <li>
+                            <span class="history-date">2026. 03. 01</span>
+                            <span class="history-content">Headquarters relocation (Seoul -> Gyeonggi-do)</span>
+                        </li>
+                        <li>
+                            <span class="history-date">2026. 02. 20</span>
+                            <span class="history-content">Paid-in capital increase</span>
+                        </li>
+                        <li>
+                            <span class="history-date">2026. 01. 07</span>
+                            <span class="history-content">Certified as Social Venture Enterprise (Minister of SMEs and Startups)</span>
+                        </li>
+                    </ul>
+                </div>
+
+                
+                <div class="history-year">
+                    <h3>2025</h3>
+                    <ul class="history-list">
+                        <li>
+                            <span class="history-date">2025. 12. 01</span>
+                            <span class="history-content">Contract for Smart Vocational Training Platform (STEP) https//glm.step.or.kr <span class="history-sub">(Korea University of Technology and Education Online Lifelong Education Institute)</span></span>
+                        </li>
+                        <li>
+                            <span class="history-date">2025. 09 ~ 12</span>
+                            <span class="history-content">Selected for Seoul Climate Tech Support Center consulting - 3 mentoring sessions - LINGSOL</span>
+                        </li>
+                        <li>
+                            <span class="history-date">2025. 09 ~ 12</span>
+                            <span class="history-content">Selected for DPG Test Bed - 30% of VOAS platform implemented</span>
+                        </li>
+                        <li>
+                            <span class="history-date">2025. 09. 01</span>
+                            <span class="history-content">
+                                Selected as resident of Gyeonggi Startup Innovation Space, Northern Region (Uijeongbu), Tium Space - VOAS (Voice Open Art Stage)
+                                <span class="history-sub">Branch relocation and branch trade name change (DML)</span>
+                            </span>
+                        </li>
+                        <li>
+                            <span class="history-date">2025. 07 ~ 12</span>
+                            <span class="history-content">Selected for High-Performance Computing Support Program (AI model training, evaluation, and inference) - VOAS</span>
+                        </li>
+                        <li>
+                            <span class="history-date">2025. 07. 07</span>
+                            <span class="history-content">COCI PLUS Co., Ltd. Namyangju branch established</span>
+                        </li>
+                        <li>
+                            <span class="history-date">2025. 04. 23</span>
+                            <span class="history-content">COCI PLUS Co., Ltd. founded</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 COCI PLUS Co., Ltd. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>

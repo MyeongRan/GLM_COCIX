@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GLM Lab - About</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, sans-serif; }
+        body { background-color: #f4f7f9; color: #333333; line-height: 1.6; }
+        
+        
+        header { background: #0f1c2e; color: #fff; padding: 20px 10%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; }
+        .logo { display: flex; align-items: center; }
+        .logo a { color: #fff; font-size: 1.6rem; font-weight: bold; text-decoration: none; letter-spacing: 1px; }
+        .logo span { color: #3498db; font-size: 0.95rem; margin-left: 10px; font-weight: 500; }
+        .nav-container { display: flex; align-items: center; }
+        .nav-links { list-style: none; display: flex; align-items: center; }
+        .nav-links li { margin-left: 25px; }
+        .nav-links a { color: #94a3b8; text-decoration: none; font-size: 1rem; font-weight: 500; transition: color 0.3s; }
+        .nav-links a:hover, .nav-links .active { color: #fff; }
+        .portal-btn { margin-left: 30px; padding: 6px 20px; border: 1px solid #3498db; color: #3498db; text-decoration: none; font-size: 0.9rem; font-weight: bold; border-radius: 20px; transition: all 0.3s; }
+        .portal-btn:hover { background: #3498db; color: #0f1c2e; }
+        
+        .container { padding: 60px 10%; max-width: 1100px; margin: 0 auto; }
+        h2 { color: #1a365d; font-size: 1.8rem; margin-bottom: 30px; position: relative; padding-bottom: 10px; }
+        h2::after { content: ''; position: absolute; bottom: 0; left: 0; width: 40px; height: 3px; background: #3498db; }
+        .card { background: white; padding: 35px; border-radius: 8px; border: 1px solid #e1e8ed; margin-bottom: 30px; box-shadow: 0 2px 8px rgba(0,0,0,0.01); }
+        .card p { font-size: 1.05rem; color: #444; word-break: keep-all; margin-bottom: 10px; }
+        .tech-focus { background: #edf2f7; border-left: 4px solid #3498db; padding: 15px; margin-top: 15px; font-weight: bold; color: #1a365d; }
+    
+        footer {
+            background: #0f172a; 
+            color: #94a3b8;      
+            text-align: center;
+            padding: 30px 10%;
+            margin-top: 60px;    
+            font-size: 0.9rem;
+            border-top: 1px solid rgba(59, 130, 246, 0.1); 
+        }
+    
+        .lang-btn { margin-left: 12px; padding: 6px 14px; border: 1px solid #3498db; color: #0f1c2e; background: #3498db; text-decoration: none; font-size: 0.85rem; font-weight: bold; border-radius: 20px; transition: all 0.3s; letter-spacing: 1px; }
+        .lang-btn:hover { background: transparent; color: #3498db; }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo"><a href="company-glm-en.html">GLM</a><span>GLM Lab</span></div>
+        <div class="nav-container">
+            <ul class="nav-links">
+                <li><a href="company-glm-en.html" class="active">About</a></li>
+                <li><a href="cert-glm-en.html">Certifications & Achievements</a></li>
+                <li><a href="contact-glm-en.html">Contact</a></li>
+            </ul>
+            <a href="index-en.html" class="portal-btn">Portal Home</a>
+            <a href="company-glm.html" hreflang="ko" title="한국어로 보기" class="lang-btn">KR</a>
+        </div>
+    </header>
+
+    <div class="container">
+        <h2>About the Lab</h2>
+        <div class="card">
+            <p><strong>GLM Lab</strong> is a technology research company leading the convergence of future-oriented knowledge research and Culture Technology (CT).</p>
+            <p>Based on securing proprietary intellectual property (IP), we conduct design and research centered on core technologies.</p>
+        </div>
+
+        <h2>Ongoing Research Projects</h2>
+        <div class="card">
+            <p>GLM Lab carries out key advancement projects built on its core technology patents.</p>
+            <div class="tech-focus">
+                📌 Core R&D: Developing the patent-registered [Anthology Publishing System] process and researching engine optimization (in progress)
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p>© 2026 GLM Lab. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>
