@@ -45,6 +45,32 @@
     
         .lang-btn { margin-left: 12px; padding: 6px 14px; border: 1px solid #2ecc71; color: #111e16; background: #2ecc71; text-decoration: none; font-size: 0.85rem; font-weight: bold; border-radius: 20px; transition: all 0.3s; letter-spacing: 1px; }
         .lang-btn:hover { background: transparent; color: #2ecc71; }
+    /* ===== 모바일 공통 (v3.4) ===== */
+        @media (max-width: 900px) {
+            header { padding: 12px 5%; flex-direction: row; flex-wrap: wrap; align-items: center; gap: 8px 0; }
+            header .logo { order: 0; }
+            header .logo a { font-size: 1.35rem; }
+            header .logo span { font-size: 0.82rem; margin-left: 8px; }
+            header .nav-container { display: contents; }
+            header .nav-container > nav,
+            header .nav-container > .nav-links { order: 3; width: 100%; }
+            header .nav-links { display: flex; flex-wrap: wrap; justify-content: flex-start; gap: 4px 18px; margin-top: 2px; padding-top: 8px; border-top: 1px solid rgba(255, 255, 255, 0.1); }
+            header .nav-links li { margin-left: 0; }
+            header .nav-links a { font-size: 0.92rem; }
+            header .portal-btn, header .portal-home-btn { order: 1; margin-left: auto; padding: 5px 14px; font-size: 0.8rem; }
+            header .lang-btn { order: 2; margin-left: 8px; padding: 5px 12px; font-size: 0.8rem; }
+            .container { padding: 36px 5%; }
+            h2 { font-size: 1.5rem; margin-bottom: 22px; }
+            .grid { grid-template-columns: 1fr; }
+            .card { padding: 24px; }
+            .contact-layout { grid-template-columns: 1fr; gap: 28px; }
+            .info-list strong { display: block; width: auto; margin-bottom: 2px; }
+            .form-section { padding: 24px; }
+            .cert-badge-box { flex-direction: column !important; align-items: flex-start !important; gap: 14px !important; padding: 22px !important; }
+            .stat-card { padding: 22px; }
+            .demo-btn { white-space: normal; }
+            footer { padding: 24px 5%; margin-top: 40px; }
+        }
     </style>
 </head>
 <body>

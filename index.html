@@ -47,6 +47,18 @@
         
         /* 하단 카피라이트 고정 */
         .footer-text { position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); color: rgba(255,255,255,0.2); font-size: 0.85rem; pointer-events: none; }
+    /* ===== 모바일 공통 (v3.4) ===== */
+        @media (max-width: 700px) {
+            .wrapper { flex-direction: column; }
+            .split-zone { padding: 24px; }
+            .split-zone:hover { flex: 1; }
+            .glm-zone::after { top: auto; bottom: 0; left: 15%; right: 15%; width: auto; height: 1px; }
+            .coci-zone::after { top: 0; bottom: auto; left: 15%; right: 15%; width: auto; height: 1px; }
+            .brand-logo { font-size: 2.6rem; }
+            .brand-sub { font-size: 1rem; margin-bottom: 22px; }
+            .enter-btn { padding: 10px 26px; font-size: 0.9rem; }
+            .footer-text { font-size: 0.75rem; bottom: 10px; }
+        }
     </style>
 </head>
 <body>

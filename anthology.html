@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>앤솔로지 세대 융합 플랫폼(v3) - 온보딩 & 부모님 자서전</title>
+    <!-- Boxicons CDN for premium outline/solid icons -->
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="anthology.css">
+    <script>
+    /* 화면 모드: 주소 뒤에 ?mode=mobile 이면 모바일(앱) 화면, 그 외에는 화면 폭에 따라 PC/모바일 자동 전환 */
+    (function () {
+        var d = document.documentElement;
+        var mode = (new URLSearchParams(location.search)).get('mode');
+        function apply() {
+            var w = window.innerWidth;
+            var pc = (w >= 960 && mode !== 'mobile');
+            d.classList.toggle('layout-pc', pc);
+            d.classList.toggle('layout-mobile', !pc);
+            d.classList.toggle('layout-framed', mode === 'mobile' && w >= 520);
+        }
+        apply();
+        window.addEventListener('resize', apply);
+    })();
+    </script>
+
+</head>
+<body>
+
+    <!-- Smartphone Mockup Shell -->
+    <div class="phone-mockup">
+        
+        <!-- Notch (iPhone style bezel element) -->
+        <div class="phone-notch">
+            <div class="phone-camera"></div>
+            <div class="phone-speaker"></div>
+        </div>
+
+        <!-- OS Status Bar -->
+        <div class="status-bar">
+            <span class="status-time" id="status-clock">16:30</span>
+            <div class="status-right">
+                <i class="bx bx-signal-5"></i>
+                <i class="bx bx-wifi"></i>
+                <div class="status-battery">
+                    <div class="status-battery-level"></div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- ================= v3 ONBOARDING / SIGN-UP OVERLAY (First Screen) ================= -->
+        <div class="auth-screen" id="auth-onboarding-screen">
+            <div class="auth-welcome-header">
+                <div class="auth-logo-dot"></div>
+                <h2>Anthology</h2>
+                <p>세대 공감 공동 출판 플랫폼</p>
+            </div>
+
+            <!-- STEP 1: Phone Verification Number Input -->
+            <div class="auth-step-panel active" id="auth-panel-step1">
+                <div class="form-group">
+                    <label class="form-label" style="text-align: center; margin-bottom: 8px;">휴대폰 번호 본인 인증</label>
+                    <input type="tel" class="form-input" id="auth-phone-num" placeholder="010-0000-0000" style="text-align:center; height:48px; font-size:16px;">
+                </div>
+                <button class="btn-primary" id="send-sms-btn"><i class="bx bx-message-rounded-dots"></i> 인증번호 전송</button>
+            </div>
+
+            <!-- STEP 2: SMS OTP Code Input -->
+            <div class="auth-step-panel" id="auth-panel-step2">
+                <div class="form-group">
+                    <label class="form-label" style="text-align: center; margin-bottom: 4px;">인증번호 4자리 입력</label>
+                    <p style="font-size:11px; color:var(--text-sub); text-align:center; margin-bottom: 12px;">가상 수신된 번호 [<strong style="color:var(--accent);" id="virtual-otp-code">1234</strong>]를 입력하세요.</p>
+                    <div class="sms-input-row">
+                        <input type="text" class="sms-pin-box" id="pin-0" maxlength="1">
+                        <input type="text" class="sms-pin-box" id="pin-1" maxlength="1">
+                        <input type="text" class="sms-pin-box" id="pin-2" maxlength="1">
+                        <input type="text" class="sms-pin-box" id="pin-3" maxlength="1">
+                    </div>
+                </div>
+                <button class="btn-primary" id="verify-sms-btn"><i class="bx bx-lock-open-alt"></i> 인증 완료</button>
+            </div>
+
+            <!-- STEP 3: Detail Profile Information & Age Role Choice -->
+            <div class="auth-step-panel" id="auth-panel-step3">
+                <div class="form-group">
+                    <label class="form-label" for="reg-username">필명 (이름)</label>
+                    <input type="text" class="form-input" id="reg-username" value="유명란" placeholder="사용할 필명을 적어주세요.">
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="reg-birth">생년월일 (나이 분석용)</label>
+                    <input type="date" class="form-input" id="reg-birth" value="1975-06-12">
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">해당하는 대상을 선택해 주세요</label>
+                    <div class="role-grid">
+                        <div class="role-card" data-role="student_child">초등학생</div>
+                        <div class="role-card" data-role="student_teen">중고등학생</div>
+                        <div class="role-card" data-role="college">대학생/청년</div>
+                        <div class="role-card" data-role="worker">직장인</div>
+                        <div class="role-card active" data-role="housewife">주부</div>
+                        <div class="role-card" data-role="senior">노년/어르신</div>
+                    </div>
+                </div>
+
+                <button class="btn-primary" id="complete-signup-btn"><i class="bx bx-user-check"></i> 가입 완료 및 시작하기</button>
+            </div>
+        </div>
+
+
+        <!-- Core App Container -->
+        <div class="app-container">
+            
+            <!-- App Header -->
+            <header class="app-header">
+                <div class="logo-container">
+                    <div class="logo-dot"></div>
+                    <h1 class="app-logo-text">Anthology v3</h1>
+                </div>
+                <!-- v3 Dynamic Username & Rank Title Header -->
+                <div class="user-badge" id="user-profile-btn">
+                    <span class="rank-badge rank-neighbor" id="header-user-rank">이웃</span>
+                    <span class="user-name" id="header-user-name">유명란</span>
+                </div>
+            </header>
+
+            <!-- Screens Wrapper (SPA screens) -->
+            <div class="screens-wrapper">
+
+                <!-- 1. HOME SCREEN -->
+                <section class="screen active" id="screen-home">
+                    <!-- Hero Promontion Banner -->
+                    <div class="hero-banner" id="home-hero-banner" style="background-image: url('anthology_theme_bg_1780040392447.png');">
+                        <div class="hero-overlay"></div>
+                        <div class="hero-content">
+                            <span class="badge badge-purple" style="margin-bottom: 4px;">공동 출판 기획 테마</span>
+                            <h2 class="hero-title" id="home-hero-title">도봉구 홈베이킹<br>레시피 앤솔로지</h2>
+                            <p class="hero-desc">온 세대의 다양한 행복이 한 권의 책이 됩니다.</p>
+                        </div>
+                    </div>
+
+                    <div class="desk-split"><div class="desk-col">
+                    <!-- Heart/Mind Diagnostic Test Card -->
+                    <div class="glass-card" id="mind-survey-card">
+                        <div class="diagnostic-container">
+                            <div class="diagnostic-text">
+                                <span class="badge badge-mint" style="margin-bottom: 4px;">나를 찾는 성찰 진단</span>
+                                <h4>자아 찾기 글쓰기 테스트</h4>
+                                <p>내 상황(연령/세대)에 최적화된 포맷 양식을 선별합니다.</p>
+                            </div>
+                            <button class="btn-primary btn-inline" id="start-survey-btn" style="width: auto;">
+                                <i class="bx bx-play-circle"></i> 시작
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Personalized Categories Horizontal Scroll Cloud -->
+                    <h3 class="sec-title" id="home-cloud-title">나를 위한 맞춤 키워드</h3>
+                    <div class="category-cloud" id="home-category-cloud">
+                        <!-- Filled dynamically by app_2.js -->
+                    </div>
+
+                    </div><div class="desk-col">
+                    <!-- Personalized Topic Recommendation -->
+                    <h3 class="sec-title">오늘의 추천 토픽</h3>
+                    <div class="glass-card topic-card">
+                        <div class="topic-header">
+                            <span class="badge badge-purple" id="recommended-category">자서전 (기혼자)</span>
+                            <span class="reward-preview"><i class="bx bx-coin-stack"></i> +100p</span>
+                        </div>
+                        <div class="topic-body">
+                            <p class="topic-question" id="recommended-question">"아이의 첫 울음소리를 듣던 분만실 안의 기억은 어떤 모습인가요?"</p>
+                            <p class="topic-tips" id="recommended-tips">육아 좌충우돌 단계: 소리, 냄새, 가슴 저릿하던 감정을 입체적으로 적어주세요.</p>
+                        </div>
+                        <button class="btn-primary" id="write-now-shortcut-btn">
+                            <i class="bx bx-edit-alt"></i> 이 주제로 글 쓰러 가기
+                        </button>
+                    </div>
+                    </div></div>
+                </section>
+
+
+                <!-- 2. WRITE SCREEN (Guided Studio v3 - Lists First) -->
+                <section class="screen" id="screen-write">
+                    <div class="sec-title">
+                        <span>나의 에세이 목록</span>
+                        <span class="badge badge-muted" id="my-writing-count">2편 완료</span>
+                    </div>
+                    
+                    <div class="studio-container">
+                        <!-- Primary Action Button (Unified Size) -->
+                        <button class="btn-primary" id="open-write-overlay-btn" style="margin-bottom: 16px;">
+                            <i class="bx bx-edit-alt"></i> 새 에세이 작성하기
+                        </button>
+
+                        <!-- Existing post list -->
+                        <div class="post-list-grid" id="my-post-list-grid">
+                            <!-- Injected dynamically by app_2.js -->
+                        </div>
+                    </div>
+                </section>
+
+
+                <!-- 3. MATCHING & FUNDING SCREEN -->
+                <section class="screen" id="screen-matching">
+                    <h3 class="sec-title">AI 매칭 & 공동 출판</h3>
+                    
+                    <div class="desk-split"><div class="desk-col">
+                    <!-- v3: Segmented Generation Matching Options -->
+                    <div class="glass-card" style="padding: 12px 16px; margin-bottom: 12px;">
+                        <span class="badge badge-purple" style="margin-bottom:6px;">사화집 매칭 옵션</span>
+                        <div class="matching-options-wrapper">
+                            <div class="matching-option-card active" id="match-opt-merge">
+                                <i class="bx bx-git-merge"></i>
+                                <h5>세대 융합 매칭</h5>
+                                <p>다양한 세대의 서로 다른 행복을 엮기</p>
+                            </div>
+                            <div class="matching-option-card" id="match-opt-split">
+                                <i class="bx bx-grid-alt"></i>
+                                <h5>세대별 맞춤 매칭</h5>
+                                <p>동일 연령층끼리 통일감 있게 엮기</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="glass-card matching-dashboard">
+                        <!-- Rotating Matcher Aura -->
+                        <div class="ai-matching-aura" id="matching-aura-trigger">
+                            <div class="pulsing-circles"></div>
+                            <div class="pulsing-circles"></div>
+                            <div class="pulsing-circles"></div>
+                            <div class="ai-matching-inner">
+                                <i class="bx bx-compass ai-matching-icon" id="matching-icon"></i>
+                                <span id="matching-status-lbl">AI 매칭 시작</span>
+                            </div>
+                        </div>
+
+                        <p class="hero-desc" id="matching-helper-text" style="margin-top: 10px;">
+                            작성한 글들을 바탕으로 AI가 유사 텍스트 군을 탐색합니다.<br>
+                            <strong>레이더 원을 터치해 보세요.</strong>
+                        </p>
+                    </div>
+
+                    </div><div class="desk-col">
+                    <h3 class="sec-title">출판 펀딩 대기방</h3>
+                    <div class="matching-results-list" id="matching-results-list">
+                        <!-- Injected dynamically -->
+                        <div class="glass-card" style="text-align: center; color: var(--text-muted); padding: 30px 10px;">
+                            <i class="bx bx-message-square-detail" style="font-size: 32px; margin-bottom: 8px;"></i>
+                            <p style="font-size: 13px;">에세이 작성 완료 후 AI 매칭을 실행하면 이곳에 공동 앤솔로지 프로젝트 펀딩이 활성화됩니다.</p>
+                        </div>
+                    </div>
+                    </div></div>
+                </section>
+
+
+                <!-- 4. WALLET & LOCAL NET SCREEN (v3 - Wallet & Settlement) -->
+                <section class="screen" id="screen-local">
+                    <div class="desk-split"><div class="desk-col">
+                    <h3 class="sec-title">마이 지갑 & 수익 정산</h3>
+
+                    <!-- Wallet Dashboard -->
+                    <div class="wallet-box">
+                        <div class="wallet-title">Anthology Wallet</div>
+                        <div class="wallet-amount-row">
+                            <span class="wallet-amount" id="wallet-balance">250</span>
+                            <span class="wallet-unit">Point</span>
+                        </div>
+                        <div class="wallet-footer">
+                            <div class="wallet-stat">
+                                <span class="wallet-stat-lbl">누적 글 작성</span>
+                                <span class="wallet-stat-val" id="wallet-posts-count">2 편</span>
+                            </div>
+                            <div class="wallet-stat" style="align-items: flex-end;">
+                                <span class="wallet-stat-lbl">정산 가능 리워드</span>
+                                <span class="wallet-stat-val" style="color:var(--accent);" id="wallet-settlement-val">+50 p</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Profit Settlement Dashboard -->
+                    <div class="glass-card">
+                        <h4 class="recommendation-title" style="margin-bottom: 8px;"><i class="bx bx-trending-up"></i> 공동 저작 수익 투명 정산판</h4>
+                        <div class="settlement-grid">
+                            <div class="settlement-card">
+                                <div class="settlement-lbl">독자 조회</div>
+                                <div class="settlement-val" id="settlement-views">380 회</div>
+                            </div>
+                            <div class="settlement-card">
+                                <div class="settlement-lbl">소책자 인쇄 인세 분배</div>
+                                <div class="settlement-val" id="settlement-incentive">5.5% 적립</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    </div><div class="desk-col">
+                    <!-- Local Map & Network Link -->
+                    <h3 class="sec-title">로컬 작가 이웃 맵</h3>
+                    <div class="map-container">
+                        <div class="map-title-overlay"><i class="bx bx-map-pin"></i> 도봉구 로컬 인적 네트워킹</div>
+                        
+                        <svg class="interactive-map" viewBox="0 0 400 300">
+                            <defs>
+                                <pattern id="map-grid-v3" width="20" height="20" patternUnits="userSpaceOnUse">
+                                    <path d="M 20 0 L 0 0 0 20" fill="none" stroke="rgba(255,255,255,0.015)" stroke-width="1"/>
+                                </pattern>
+                            </defs>
+                            <rect width="100%" height="100%" fill="url(#map-grid-v3)"/>
+
+                            <path class="map-region" d="M120,50 L280,30 L360,110 L330,220 L240,260 L140,230 L80,140 Z" />
+                            
+                            <line x1="160" y1="90" x2="230" y2="130" stroke="rgba(168, 85, 247, 0.4)" stroke-width="1.5" stroke-dasharray="4,4" />
+                            <line x1="230" y1="130" x2="280" y2="200" stroke="rgba(168, 85, 247, 0.4)" stroke-width="1.5" stroke-dasharray="4,4" />
+                            <line x1="160" y1="90" x2="280" y2="200" stroke="rgba(168, 85, 247, 0.2)" stroke-width="1.5" stroke-dasharray="4,4" />
+
+                            <!-- Active map pins -->
+                            <g class="map-marker" transform="translate(160, 90)" id="marker-banghak">
+                                <circle class="marker-pulse" r="10" cx="0" cy="0" />
+                                <path class="marker-pin active" d="M0,0 C-4,-8 -4,-14 0,-18 C4,-14 4,-8 0,0 Z" />
+                                <circle fill="#fff" r="2" cx="0" cy="-12" />
+                            </g>
+
+                            <g class="map-marker" transform="translate(230, 130)" id="marker-chang">
+                                <circle class="marker-pulse" r="10" cx="0" cy="0" style="stroke: var(--accent); animation-delay: 0.5s;" />
+                                <path class="marker-pin" d="M0,0 C-4,-8 -4,-14 0,-18 C4,-14 4,-8 0,0 Z" id="pin-chang" />
+                                <circle fill="#fff" r="2" cx="0" cy="-12" />
+                            </g>
+
+                            <g class="map-marker" transform="translate(280, 200)" id="marker-ssangmun">
+                                <circle class="marker-pulse" r="10" cx="0" cy="0" style="animation-delay: 1s;" />
+                                <path class="marker-pin" d="M0,0 C-4,-8 -4,-14 0,-18 C4,-14 4,-8 0,0 Z" id="pin-ssangmun" />
+                                <circle fill="#fff" r="2" cx="0" cy="-12" />
+                            </g>
+                        </svg>
+                    </div>
+
+                    <!-- Dynamic Local Recommendation Cards -->
+                    <div class="local-recommendation-details" id="local-details-container">
+                        <!-- Injected dynamically by JS -->
+                    </div>
+                    </div></div>
+                </section>
+
+            </div>
+
+            <!-- Bottom Navigation Bar -->
+            <nav class="bottom-nav">
+                <div class="nav-item active" data-target="screen-home">
+                    <i class="bx bx-home-alt"></i>
+                    <span>홈</span>
+                    <div class="nav-active-dot"></div>
+                </div>
+                <div class="nav-item" data-target="screen-write">
+                    <i class="bx bx-edit-alt"></i>
+                    <span>스튜디오</span>
+                    <div class="nav-active-dot"></div>
+                </div>
+                <div class="nav-item" data-target="screen-matching">
+                    <i class="bx bx-shuffle"></i>
+                    <span>매칭 & 펀딩</span>
+                    <div class="nav-active-dot"></div>
+                </div>
+                <div class="nav-item" data-target="screen-local">
+                    <i class="bx bx-map-alt"></i>
+                    <span>지갑 & 맵</span>
+                    <div class="nav-active-dot"></div>
+                </div>
+            </nav>
+
+        </div>
+        
+        <!-- Home indicator bar -->
+        <div class="home-indicator"></div>
+    
+    <!-- ===== OVERLAYS & MODALS (폰 화면 안으로 이동) ===== -->
+<!-- ================= MODALS & OVERLAYS ================= -->
+    
+    <!-- 1. WRITE STUDIO OVERLAY (Second Window) -->
+    <div class="write-overlay" id="write-overlay-window">
+        <div class="write-overlay-header">
+            <span class="write-overlay-title" id="write-window-title">새 에세이 작성</span>
+            <button class="close-overlay-btn" id="close-write-overlay-btn"><i class="bx bx-x"></i></button>
+        </div>
+        <div class="write-overlay-body">
+            <!-- 작성 방식: 가이드 질문형(기본) / 자유롭게 쓰기 -->
+            <div class="write-mode-switch" id="write-mode-switch">
+                <button type="button" class="write-mode-btn active" data-mode="guided"><i class="bx bx-list-check"></i> 가이드 질문형</button>
+                <button type="button" class="write-mode-btn" data-mode="free"><i class="bx bx-edit-alt"></i> 자유롭게 쓰기</button>
+            </div>
+            <p class="write-mode-hint" id="write-mode-hint"></p>
+
+            <!-- Category dropdown inside editor -->
+            <div class="form-group">
+                <label class="form-label" id="write-category-label" for="write-category">글쓰기 주제 분류</label>
+                <select class="form-select" id="write-category">
+                    <!-- Dynamic categories loaded in anthology.js -->
+                </select>
+            </div>
+
+            <!-- Dynamic Format Guide -->
+            <div class="format-guide-container" id="format-guide">
+                <h4 class="format-guide-title"><i class="bx bx-bulb"></i> 포맷 가이드라인</h4>
+                <p class="format-guide-desc" id="format-guide-text">자신의 인생을 차분히 성찰할 수 있도록 감정을 담은 수필식 포맷 양식을 선별 제공합니다.</p>
+            </div>
+
+            <!-- Main Title Input -->
+            <div class="form-group">
+                <label class="form-label" for="write-title">제목</label>
+                <input type="text" class="form-input" id="write-title" placeholder="글의 어울리는 제목을 적어주세요.">
+            </div>
+
+            <!-- Dynamic Template Inputs -->
+            <div class="dynamic-form-fields" id="dynamic-form-fields">
+                <!-- Injected dynamically by JS -->
+            </div>
+
+            <!-- Write Footer controls -->
+            <div class="write-footer-bar">
+                <span class="reward-preview"><i class="bx bx-coin-stack"></i> 제출 시 +200p 적립 (예비작가 자동 등업!)</span>
+                <div style="display: flex; gap: 8px;">
+                    <button class="btn-secondary btn-inline" id="save-temp-btn" style="width:auto; height:38px;">임시저장</button>
+                    <button class="btn-primary btn-inline" id="publish-btn" style="width:auto; height:38px;"><i class="bx bx-paper-plane"></i> 업로드</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 2. FUNDING MULTI-STEP DETAIL OVERLAY -->
+    <div class="funding-overlay" id="funding-detail-overlay">
+        <div class="write-overlay-header">
+            <span class="write-overlay-title" id="funding-book-title">공동 출판 기획 상세</span>
+            <button class="close-overlay-btn" id="close-funding-overlay-btn"><i class="bx bx-x"></i></button>
+        </div>
+        <div class="funding-overlay-body">
+            <span class="badge badge-purple" style="margin-bottom:8px;">공동 앤솔로지 프로젝트</span>
+            <h2 id="funding-detail-title" style="font-size:18px; font-weight:700; margin-bottom:8px;">책 제목 로딩...</h2>
+            
+            <div class="glass-card" style="margin-bottom: 14px;">
+                <h4 class="recommendation-title" style="font-size:13px; margin-bottom:6px;"><i class="bx bx-info-circle"></i> 출판 기획 소개</h4>
+                <p class="hero-desc" id="funding-detail-desc" style="line-height:1.4;">이웃들의 서로 다른 경험이 엮여 한 권의 앤솔로지로 세상에 탄생합니다.</p>
+            </div>
+
+            <!-- Co-authors list -->
+            <h4 class="sec-title" style="font-size:14px; margin-bottom:6px;">공동 저술 이웃 작가</h4>
+            <div class="glass-card" style="margin-bottom: 14px; padding: 12px;" id="funding-co-authors">
+                <!-- Injected dynamically -->
+            </div>
+
+            <!-- Design Choice / Voting -->
+            <h4 class="sec-title" style="font-size:14px; margin-bottom:6px;">책 디자인 시안 선택 (디자인 투표)</h4>
+            <div class="funding-cover-selector">
+                <div class="cover-option-card active" data-cover="A">
+                    <div class="cover-thumbnail" style="background: linear-gradient(135deg, #6366F1, #A855F7);">시안 A</div>
+                    <span style="font-size:11px; font-weight:600;">클래식 오로라</span>
+                </div>
+                <div class="cover-option-card" data-cover="B">
+                    <div class="cover-thumbnail" style="background: linear-gradient(135deg, #10B981, #6366F1);">시안 B</div>
+                    <span style="font-size:11px; font-weight:600;">레트로 민트</span>
+                </div>
+                <div class="cover-option-card" data-cover="C">
+                    <div class="cover-thumbnail" style="background: linear-gradient(135deg, #F59E0B, #EF4444);">시안 C</div>
+                    <span style="font-size:11px; font-weight:600;">선셋 오렌지</span>
+                </div>
+            </div>
+
+            <!-- Call to action (Unified Size) -->
+            <button class="btn-primary" id="confirm-funding-action-btn">
+                <i class="bx bx-gift"></i> 펀딩 참여하기 (100 포인트 차감)
+            </button>
+        </div>
+    </div>
+
+    <!-- 3. Interactive Survey Modal (Mind Diagnostic) -->
+    <div class="custom-modal" id="survey-modal">
+        <div class="modal-body">
+            <span class="modal-icon"><i class="bx bx-wink-smile"></i></span>
+            <h3 class="modal-title" id="survey-question-title">글쓰기 성향 진단 (1/3)</h3>
+            <p class="modal-desc" id="survey-question-desc">내 지난 삶을 돌이켜 보았을 때, 가장 마음에 깊게 남는 감정은 무엇인가요?</p>
+            
+            <div class="modal-btn-row" id="survey-options-container">
+                <!-- Injected dynamically -->
+            </div>
+            
+            <button class="btn-secondary" id="close-survey-btn" style="margin-top: 12px;">진단 중단</button>
+        </div>
+    </div>
+
+    <!-- 4. Funding Success Modal / Book Gift Claim -->
+    <div class="custom-modal" id="funding-success-modal">
+        <div class="modal-body">
+            <span class="modal-icon" style="color: var(--accent-warning);"><i class="bx bx-trophy"></i></span>
+            <h3 class="modal-title">공동 출판 인쇄 성공! (작가 등업 완료)</h3>
+            <p class="modal-desc">
+                펀딩 목표 100%를 돌파하여 정식 소책자로 출판됩니다.<br>
+                정식 **'작가'** 등업 배지를 획득하셨습니다! 실물 책 리워드 배송 신청이 가능합니다.
+            </p>
+            <div class="modal-btn-row">
+                <button class="btn-accent" id="claim-delivery-btn"><i class="bx bx-truck"></i> 실물 책 배송 신청하기</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 5. General Notification/OK Modal -->
+    <div class="custom-modal" id="general-ok-modal">
+        <div class="modal-body">
+            <span class="modal-icon" id="general-ok-icon"><i class="bx bx-check-circle"></i></span>
+            <h3 class="modal-title" id="general-ok-title">처리 완료</h3>
+            <p class="modal-desc" id="general-ok-desc">요청이 성공적으로 처리되었습니다.</p>
+            <button class="btn-primary" id="general-ok-btn">확인</button>
+        </div>
+    </div>
+
+    </div>
+
+    <script src="anthology.js"></script>
+</body>
+</html>
